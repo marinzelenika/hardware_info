@@ -1,0 +1,29 @@
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/item/item_list">Comp Info</a>
+  <div class="container">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarColor01">
+  
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link mr-3" href="/item/item_list">Lista artikala <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/item/new">Dodaj novi</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link float-right" href="/logout">Logout</a>
+      </li>
+       
+     
+    </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}

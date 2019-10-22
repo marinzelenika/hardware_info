@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        {% endblock %}
+        <title>{% block title %}Uredi artikal{% endblock %}</title>
+        
+    </head>
+    <body>
+         {% block body %}
+
+         {{include ('inc/navbar.html.twig')}}
+        <div class="container">
+
+        <h2 class="mb-5">Uredi artikal: </h2>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+      </div>
+       {% endblock %}
+        
+    </body>
+</html>

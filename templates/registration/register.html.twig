@@ -1,0 +1,36 @@
+
+
+{% block title %}{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card card-body">
+            <img class="ep" src="/img/ep.png">
+            
+    
+    <h1 class="text-center">Register</h1>
+    <div class="form-group">
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button class="btn btn-primary">Register</button>
+    {{ form_end(registrationForm) }}
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}

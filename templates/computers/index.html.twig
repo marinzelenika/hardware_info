@@ -1,0 +1,66 @@
+<head>
+<title>{% block title %}Welcome!{% endblock %}</title>
+{% block stylesheets %}
+<link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+{% endblock %}
+</head>
+<body>
+{% block body %}
+{{include ('inc/navbar.html.twig')}}
+<div class="container">
+<h1 class="mb-5">Lista artikala</h1>
+<!--<form class="form-inline my-2 my-lg-0" method="POST" action="myFunction()">
+      <input class="form-control mr-sm-3" type="text" placeholder="Search" name="search"  id="btnRecherche">
+      <a class="btn btn-secondary my-2 my-sm-0" type="submit" href="/item/search">Pretraži</a>
+</form> -->
+
+     <table class="display" id="items">
+  <thead>
+    <tr>
+      <th >#</th>
+      <th >Naziv</th>
+      <th >Datum</th>
+      <th >Korisnik</th>
+      <th >Inventurni broj</th>
+      <th ></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in items %}
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.title }}</td>
+      <td>{{ item.date.format('Y-m-d') }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.invnum }}</td>
+      <td><a href="/item/edit/{{ item.id }}" class="btn btn-primary">Uredi</a>
+      <button class="btn btn-danger delete-item" data-id="{{ item.id }}">Izbriši</button>
+      </td>
+      
+    </tr>
+    
+    
+    {% endfor %} 
+    </tbody>
+    </table>
+
+</div>
+{% endblock %}
+</body>
+
+{% block javascripts %}
+  <script src="/js/main.js"></script>
+  <script type='text/javascript'>
+
+
+$(document).ready( function () {
+    $('#items').DataTable();
+} );
+</script>    
+{% endblock %}
